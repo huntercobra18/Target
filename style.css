@@ -1,39 +1,86 @@
-body,html{
-    padding: 0;
-    margin: 0;
-    background-color: #222;
-    overflow: scroll;
-    overflow-x: hidden;
-    font-family: 'Roboto', Helvetica, sans-serif;
-}
+
 ::-webkit-scrollbar {
-  width: 0;  /* Remove scrollbar space */
-  background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 0;
+  background: transparent;
+}
+@font-face {
+  font-family: "Eras_Bold_ITC";
+  src: url("font/Eras_Bold_ITC.ttf") format("ttf"),
+}
+@font-face {
+  font-family: "Eras_Demi_ITC";
+  src: url("font/Eras_Demi_ITC.ttf") format("ttf"),
 }
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
+body,html{
+  padding: 0;
+  margin: 0;
+  background-color: #1e2225;
+  /* background-image: url(img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+  overflow: scroll;
+  overflow-x: hidden;
+  font-family: myriad-pro,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 #content{
   display: none;
 }
+.main-title{
+  font-family: 'Eras_Bold_ITC' 'sans-serif';
+  font-size: calc(2em + 3vw);
+  color: #d7d5d9;
+}
 
+.sub-title{
+  font-family: 'Eras_Bold_ITC' 'sans-serif';
+  font-size: calc(1em + 1vw);
+  color: #d7d5d9;
+}
+.main-text{
+  font-family: myriad-pro,sans-serif;
+  font-size: calc(1em + 0.5vw);
+  color: #d7d5d9;
+}
+strong{
+  color: #a4343a;
+}
+
+button{
+  border: none;
+  cursor: pointer;
+  padding: 15px 30px;
+  font-family: 'Eras_Demi_ITC' 'sans-serif';
+  font-weight: bold;
+  font-size: calc(0.8em + 0.5vw);
+  transition: 0.2s ease-in-out;
+}
+button:hover{
+  background: #a4343a;
+  color: #d7d5d9;
+}
 /* loading screen */
 
 #loading-screen{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #222;
+  background-color: #1e2225;
   height: 100vh;
+  width: 100%;
 }
-#loading-screen svg{
-  width: 60vw;
+#loading-screen img{
+  width: 50vw;
   max-width: 500px;
-  fill: whitesmoke;
 }
+
 #target-tit{
   position: fixed;
   top: 0;
@@ -43,60 +90,65 @@ body,html{
   width: 100%;
   z-index: 1000;
 }
-#target-tit svg{
+#target-tit img{
   fill: whitesmoke;
-  margin-top: 20px;
+  margin-top: 40px;
   width: 120px;
-}
-
-.ecran{
-  height: 100vh;
-  width: 100%;
 }
 
 /* ecran 1 */
 
 #screen1{
   position: fixed;
-  top: 0;
+  top: 100px;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .container-sc1{
   width: 80%;
-  height: 80vh;
+  height: 100%;
   display: flex;
-  flex-direction: row;
 }
 #tee{
-  width: 60%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1 1 auto;
+  flex: 1 0 50%;
 }
 #tee img{
   width: 100%;
-  max-width: 700px;
-  min-width: 380px;
+  height: 100%;
+  max-height: 70vh;
+  object-fit: contain;
 }
 #scroll, .tee-sent{
-  width: 40%;
+  margin-left: 3vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
+  flex: 1 1 50%;
 }
-#scroll img{
-  width: 20vw;
-  max-width: 200px;
-  margin-left: 80px;
+.tee-sent p{
+  margin: 20px 0;
+  font-size: 2vw;
+  font-family: 'Eras_Demi_ITC' 'sans-serif';
 }
+
+#scroll h1{
+  max-width: 520px;
+  margin-bottom: 5vw;
+}
+
+#scroll p{
+  margin-bottom: 3vw;
+}
+
 .tee-sent{
   display: none;
   max-width: 750px;
@@ -244,15 +296,24 @@ form div input, form div textarea{
   height: 120px;
 }
 
-#input{
+input{
   border-radius: 5px;
-  padding: 10px;
+  padding: 30px;
   width: 90px;
-  background-color: transparent;
+  background-color: #d7d5d9;
   border: 2px solid whitesmoke;
   color: white;
   cursor: pointer;
   font-weight: 600px;
+  margin: 10px 0 30px;
+}
+
+#input{
+  margin-top: 40px;
+  color: #1e2225;
+  font-size: 0.8em;
+  font-weight: bold;
+  width: 140px;
 }
 
 @media (max-width: 1250px) {
