@@ -1,0 +1,274 @@
+body,html{
+    padding: 0;
+    margin: 0;
+    background-color: #222;
+    overflow: scroll;
+    overflow-x: hidden;
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#content{
+  display: none;
+}
+
+/* loading screen */
+
+#loading-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  height: 100vh;
+}
+#loading-screen svg{
+  width: 60vw;
+  max-width: 500px;
+  fill: whitesmoke;
+}
+#target-tit{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 1000;
+}
+#target-tit svg{
+  fill: whitesmoke;
+  margin-top: 20px;
+  width: 120px;
+}
+
+.ecran{
+  height: 100vh;
+  width: 100%;
+}
+
+/* ecran 1 */
+
+#screen1{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-sc1{
+  width: 80%;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+}
+#tee{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+}
+#tee img{
+  width: 100%;
+  max-width: 700px;
+  min-width: 380px;
+}
+#scroll, .tee-sent{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+#scroll img{
+  width: 20vw;
+  max-width: 200px;
+  margin-left: 80px;
+}
+.tee-sent{
+  display: none;
+  max-width: 750px;
+  margin: 80px 0;
+}
+.tee-sent p{
+  color: whitesmoke;
+  font-size: 30px;
+  padding: 20px;
+  opacity: 0;
+}
+
+/* ecran 2 */
+
+#screen2{
+  margin-top: 300vh;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-sc2{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+#desc{
+  color: #111;
+  padding: 30px;
+  background-color: whitesmoke;
+  border-radius: 10px 0 0 10px;
+  max-height: 568px;
+  margin-right: 5px;
+}
+
+#desc h2{
+  margin: 10px 0px 30px 0px;
+  font-size: 1.8em;
+}
+
+#desc p{
+  font-size: 1.4em;
+  overflow: scroll;
+  max-height: 450px;
+}
+
+#model{
+  border-radius: 0 10px 10px 0;
+  overflow: hidden;
+  flex: 1 0 auto;
+}
+
+#screen3{
+  margin: auto;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#slider{
+  width: 50%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+#img-slide{
+  height: auto;
+  width: 100%;
+  transform-origin: center;
+  border: solid 2px whitesmoke;
+  border-radius: 10px;
+}
+
+#slider-arrow{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0px 20px;
+}
+
+#slider-arrow span{
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  font-size: 100px;
+  color: rgba(220, 220, 220, 0.8);
+  padding: 15px;
+}
+
+#slider:hover #precedent,
+#slider:hover #suivant {
+    opacity: 1;
+}
+
+#form{
+  width: 40%;
+  height: 70vh;
+}
+
+#form h4{
+  height: 20%;
+  color: whitesmoke;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 30px;
+  padding-bottom: 40px;
+}
+form{
+  color: white;
+  display: flex;
+  height: 70%;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+}
+form div{
+  display: flex;
+  flex-direction: column;
+}
+
+form div label{
+  padding-bottom: 10px;
+}
+
+form div input, form div textarea{
+  height: 30px;
+  width: 450px;
+  border-radius: 5px;
+  border: none;
+}
+#msg{
+  height: 120px;
+}
+
+#input{
+  border-radius: 5px;
+  padding: 10px;
+  width: 90px;
+  background-color: transparent;
+  border: 2px solid whitesmoke;
+  color: white;
+  cursor: pointer;
+  font-weight: 600px;
+}
+
+@media (max-width: 1250px) {
+  #screen3{
+    flex-direction: column-reverse;
+  }
+  #slider{
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  #form{
+    width: 80%;
+  }
+  form div input, form div textarea{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+}
